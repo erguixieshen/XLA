@@ -100,3 +100,33 @@ tensorflow有以下几种安装方式
 
 ![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/9.png)
 
+## 使用 TensorFlow 进行图像识别
+
+TensorFlow 提供了模型和示例的存储库，包括代码和用于对图像进行分类的训练模型。
+
+使用 Git 将 TensorFlow 模型仓库从 GitHub 克隆到您的项目目录中：
+
+>`git clone https://github.com/tensorflow/models.git`
+
+当 Git 将存储库检出新文件夹 models 时，看到以下输出：
+
+>`Output` </br>
+`Cloning into 'models'...
+remote: Counting objects: 8785, done.`</br>
+`remote: Total 8785 (delta 0), reused 0 (delta 0), pack-reused 8785`</br>
+`Receiving objects: 100% (8785/8785), 203.16 MiB | 24.16 MiB/s, done.`</br>
+`Resolving deltas: 100% (4942/4942), done.`</br>
+`Checking connectivity... done.`
+
+切换到 models/tutorials/image/imagenet 目录：
+
+>`cd models/tutorials/image/imagenet`
+
+此目录包含 classify_image.py 文件，它使用 TensorFlow 来识别图像。这个程序在第一次运行时会从 tensorflow.org 下载一个经过训练的模型。
+
+在本例中，将对预处理好的熊猫图像进行分类。执行这条命令以运行图像分类器程序：
+
+>`python classify_image.py`
+
+看到以下输出：
+
