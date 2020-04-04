@@ -50,9 +50,26 @@ tensorflow有以下几种安装方式
 
 查看报错信息
 
-![ls](https://github.com/erguixieshen/XLA/raw/master/week1/picture/5.png)
+![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/6.png)
 
 `tensorboard-1.14.0-py3-none-any.whl`无法下载
 
 同样，使用其他源使用清华镜像[下载tensorboard](https://macports.mirror.ac.za/distfiles/py-tensorboard/)
 
+或使用以下命令下载`tensorboard-1.14.0-py3-none-any.whl `版本
+
+>`wget https://macports.mirror.ac.za/distfiles/py-tensorboard/tensorboard-1.14.0-py3-none-any.whl`
+
+安装
+
+>`pip install "tensorboard-1.14.0-py3-none-any.whl"`
+
+![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/7.png)
+
+无法下载`grpcio-1.28.1-cp35-cp35m-manylinux2010_x86_64.whl`
+
+同样利用上述方法将缺少与无法下载的包安装好
+
+最后tensorflow安装成功
+
+![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/8.png)
