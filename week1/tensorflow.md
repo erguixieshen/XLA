@@ -1,4 +1,4 @@
-# ubuntu下tensorflow的使用&官方教程
+# ubuntu下tensorflow的使用&运行官方教程
 
 ## 安装tensorflow
 
@@ -22,8 +22,9 @@ tensorflow有以下几种安装方式
 
 创建一个名为`tensorflow-dev`的新虚拟环境。运行以下命令以创建环境：
 
->`python3 -m venv tensorflow-dev`
+>`python3 -m venv tensorflow`
 
 激活后，可以在终端中看到与此类似的内容：
 
->`(tensorflow-dev)username@hostname:~/tf-demo $`
+>`(tensorflow)username@hostname:~/tf-demo $`
+
