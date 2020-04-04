@@ -50,7 +50,7 @@ tensorflow有以下几种安装方式
 
 查看报错信息
 
-![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/6.png)
+![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/5.png)
 
 `tensorboard-1.14.0-py3-none-any.whl`无法下载
 
@@ -73,3 +73,30 @@ tensorflow有以下几种安装方式
 最后tensorflow安装成功
 
 ![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/8.png)
+
+## 验证安装是否成功
+
+启动 Python 解释器：
+
+>`(tensorflow-dev) $ python`
+
+导入 TensorFlow 包，并将其作为本地变量 tf。：
+
+>`import tensorflow as tf`
+
+接下来，添加这行代码来设置信息"Hello, world!"：
+
+>`hello = tf.constant("Hello, world!")`
+
+然后创建一个新的 TensorFlow 会话并将其分配给变量 sess：
+
+>`sess = tf.Session()`
+
+最后，输入这一行代码，打印出在之前的代码行中构建的 hello TensorFlow 会话的结果：
+
+>`print(sess.run(hello))`
+
+控制台中看到如下输出：
+
+![1](https://github.com/erguixieshen/XLA/raw/master/week1/picture/9.png)
+
