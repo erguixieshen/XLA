@@ -1,4 +1,4 @@
-# ubuntu下tensorflow的使用&运行官方教程
+# ubuntu下tensorflow的a安装&运行官方教程
 
 ## 安装tensorflow
 
@@ -27,4 +27,21 @@ tensorflow有以下几种安装方式
 激活后，可以在终端中看到与此类似的内容：
 
 >`(tensorflow)username@hostname:~/tf-demo $`
+
+现在可以在虚拟环境中安装 TensorFlow。
+
+运行以下命令安装和升级到 PyPi 中最新版本的 TensorFlow：
+
+>`(tensorflow-dev) $ pip3 install --upgrade tensorflow`
+
+但是下载速度非常慢，使用清华镜像[下载tensorflow](https://pypi.tuna.tsinghua.edu.cn/simple/tensorflow/)到本地安装
+
+也可以使用命令进行下载tensorflow-1.14版本，py版本为3.5.2：
+
+>`wget https://pypi.tuna.tsinghua.edu.cn/packages/d3/29/cd1f608f260addce161745be44e5696c3d4ef04a9974940bce32787b2711/tensorflow-1.14.0rc1-cp35-cp35m-manylinux1_x86_64.whl`
+
+`ls`查看已经下载好的.whl文件
+使用以下命令安装本地包(注意加引号)：
+
+>`pip install "tensorflow-1.14.0rc1-cp35-cp35m-manylinux1_x86_64.whl"`
 
