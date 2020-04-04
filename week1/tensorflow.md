@@ -41,7 +41,18 @@ tensorflow有以下几种安装方式
 >`wget https://pypi.tuna.tsinghua.edu.cn/packages/d3/29/cd1f608f260addce161745be44e5696c3d4ef04a9974940bce32787b2711/tensorflow-1.14.0rc1-cp35-cp35m-manylinux1_x86_64.whl`
 
 `ls`查看已经下载好的.whl文件
+
+![ls](https://github.com/erguixieshen/XLA/raw/master/week1/picture/4.png)
+
 使用以下命令安装本地包(注意加引号)：
 
 >`pip install "tensorflow-1.14.0rc1-cp35-cp35m-manylinux1_x86_64.whl"`
+
+查看报错信息
+
+![ls](https://github.com/erguixieshen/XLA/raw/master/week1/picture/5.png)
+
+`tensorboard-1.14.0-py3-none-any.whl`无法下载
+
+同样，使用其他源使用清华镜像[下载tensorboard](https://macports.mirror.ac.za/distfiles/py-tensorboard/)
 
