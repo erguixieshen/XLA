@@ -25,7 +25,7 @@ tensorflow有以下几种安装方式
 >`python3 -m venv tensorflow`
 
 激活虚拟环境
->`source tensorflow/bin/activate`
+>`source tensorflow-dev/bin/activate`
 
 激活后，可以在终端中看到与此类似的内容：
 
