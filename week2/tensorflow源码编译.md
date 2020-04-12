@@ -37,7 +37,9 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 ### 使用二进制安装程序
 
 可以从Bazel的[GitHub版本页面](https://github.com/bazelbuild/bazel/releases)下载二进制安装程序。
-#
+
+tensorflow1.14版本应使用bazel0.25.2版本进行编译
+
 步骤1：安装所需的软件包
 Bazel需要一个C ++编译器并解压缩才能工作：
 
@@ -47,11 +49,12 @@ Bazel需要一个C ++编译器并解压缩才能工作：
 
 >`./bazel-<version>-installer-linux-x86_64.sh --user`
 
+
 ## 下载 TensorFlow 源代码
 
 >`  git clone https://github.com/tensorflow/tensorflow.git`
 </br>
-` cd tensorflow`
+>` cd tensorflow`
 
 
 也可以直接下载（推荐）
@@ -70,7 +73,9 @@ Bazel需要一个C ++编译器并解压缩才能工作：
 
 ![xla](https://github.com/erguixieshen/XLA/raw/master/week2/picture/1.png)
 
+### Bazel build
 
+>`bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package`
 
 ### 安装软件包
 
