@@ -39,7 +39,7 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 ### 使用二进制安装程序
 
 可以从Bazel的[GitHub版本页面](https://github.com/bazelbuild/bazel/releases)下载二进制安装程序。
-
+#
 步骤1：安装所需的软件包
 Bazel需要一个C ++编译器并解压缩才能工作：
 
@@ -68,6 +68,23 @@ Bazel需要一个C ++编译器并解压缩才能工作：
 
 >`./configure`
 
-打开xla
+打开xla编译开关
+
+![xla](https://github.com/erguixieshen/XLA/raw/master/week2/picture/1.png)
+
+
+
+### 安装软件包
+
+>`pip install /tmp/tensorflow_pkg/tensorflow-1.14-cp35-cp35m-linux_x86_64.whl`
+
+## TensorFlow 生成 TensorFlow 图表
+
+XLA（加速线性代数）是用于优化TensorFlow计算的线性代数的域特定编译器。
+
+XLA 利用 JIT 编译技术分析用户在运行时创建的 TensorFlow 图表，根据实际运行时维度和类型将其专门化，将多个运算融合在一起并为它们生成高效的本机代码——适用于 CPU、GPU 之类的设备和自定义加速器（例如，Google 的 TPU）。
+
+
+
 
 
