@@ -33,7 +33,7 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 >`# Ubuntu 16.04 (LTS) uses OpenJDK 8 by default:`</br>
 `sudo apt install openjdk-8-jdk`
 </br>
-`# Ubuntu 18.04 (LTS) uses OpenJDK 11 by default:`</br>
+>`# Ubuntu 18.04 (LTS) uses OpenJDK 11 by default:`</br>
 `sudo apt install openjdk-11-jdk`
 
 ### 使用二进制安装程序
