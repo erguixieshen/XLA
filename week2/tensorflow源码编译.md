@@ -67,7 +67,7 @@ Bazel需要一个C ++编译器并解压缩才能工作：
 
 配置 build:通过运行 TensorFlow 源代码树根目录下的 ./configure 配置系统 build。此脚本会提示指定 TensorFlow 依赖项的位置，并要求指定其他构建配置选项（例如，编译器标记）。
 
->`./configure`
+> `./configure`
 
 打开xla编译开关
 
@@ -77,16 +77,40 @@ Bazel需要一个C ++编译器并解压缩才能工作：
 
 >`bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package`
 
+### 编译TensorFlow  SHA256校验错误临时解决方案
+
+开始利用bazel编译时Kaijia碰到了不应该出现的包括protobuf和llvm等数个组件下载后SHA256与期望SHA256存在差异的校验问题。
+
+按照相关的信息连接到Git的问题系统可以发现在最新的libgit2版本v0.26.0更改了生成压缩包的方法，因此出现了校验码的变动。在GitHub更新了libgit2之后，原先在tensorflow/workspace.bzl定义通过GitHub直接下载的protobuf和llvm等库变出现了因为校验码变化而无法通过验证的问题。
+
+目前有的临时解决方案主要为替换新的SHA256、替换库文件下载地址以及直接禁用SHA256校验
+
+>`sed -i -e 's/00fb4a83a4dd1c046b19730a80e2183acc647715b7a8dcc8e808d49ea5530ca8/a8da6d42ac7419e543a27e405f8b660f7b065e9ba981cc9cdcdcecb81af9cc43/g' tensorflow/workspace.bzl`
+</br>
+`sed -i '\@https://github.com/google/protobuf/archive/0b059a3d8a8f8aa40dde7bea55edca4ec5dfea66.tar.gz@d' tensorflow/workspace.bzl`
+</br>
+`bazel clean`
+</br>
+`bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package`
+
+编译成功
+
+### Build软件包
+
+bazel build 命令创建名为 build_pip_package 的可执行程序，这个程序用于构建 pip 包。请执行以下命令在 /tmp/tensolflow_pkg 目录下创建一个 .whl 包。
+
+- 从release分支build:
+>`./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg`
+
+- 从master分支build则需要使用 --nightly_flag 以获得正确的依赖:
+
+>`./bazel-bin/tensorflow/tools/pip_package/build_pip_package --nightly_flag /tmp/tensorflow_pkg`
+
 ### 安装软件包
 
 >`pip install /tmp/tensorflow_pkg/tensorflow-1.14-cp35-cp35m-linux_x86_64.whl`
 
-## TensorFlow 生成 TensorFlow 图表
-
-XLA（加速线性代数）是用于优化TensorFlow计算的线性代数的域特定编译器。
-
-XLA 利用 JIT 编译技术分析用户在运行时创建的 TensorFlow 图表，根据实际运行时维度和类型将其专门化，将多个运算融合在一起并为它们生成高效的本机代码——适用于 CPU、GPU 之类的设备和自定义加速器（例如，Google 的 TPU）。
-
+通过tensorflow源码安装成功！
 
 
 
